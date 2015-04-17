@@ -11,24 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416201515) do
+ActiveRecord::Schema.define(version: 20150417032000) do
 
   create_table "bit_pay_rails_clients", force: :cascade do |t|
-    t.string   "encrypted_pem"
+    t.string   "pem"
     t.string   "api_uri"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "bit_pay_rails_tokens", force: :cascade do |t|
-    t.string   "encrypted_token"
-    t.string   "facade"
-    t.date     "date_created"
-    t.date     "pairing_expiration"
-    t.string   "pairing_code"
-    t.integer  "client_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module BitPayRails
-  class TokenTest < ActiveSupport::TestCase
+  class ClientControllerTest < ActionController::TestCase
     # test "the truth" do
     #   assert true
     # end
