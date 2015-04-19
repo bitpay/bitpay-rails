@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417032000) do
+ActiveRecord::Schema.define(version: 20150418203148) do
 
   create_table "bit_pay_rails_clients", force: :cascade do |t|
     t.string   "pem"
     t.string   "api_uri"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "facade",     default: "merchant"
   end
 
 end
