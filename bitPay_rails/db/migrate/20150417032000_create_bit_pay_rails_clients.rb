@@ -3,6 +3,7 @@ class CreateBitPayRailsClients < ActiveRecord::Migration
     create_table :bit_pay_rails_clients do |t|
       t.string :pem
       t.string :api_uri
+      t.string :facade, default: "merchant"
 
       t.timestamps null: false
     end

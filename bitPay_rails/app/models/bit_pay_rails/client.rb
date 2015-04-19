@@ -5,8 +5,7 @@ module BitPayRails
     before_create :make_pem
 
     def make_pem
-      key = ActiveSupport::KeyGenerator.new("IGuessI'llFigureThisOutLater").generate_key("getitworking")
-      crypt = ActiveSupport::MessageEncryptor.new(key)
+      key, crypt = key_and_crypt
       pem = BitPay::KeyUtils.generate_pem
       self.pem = crypt.encrypt_and_sign(pem)
     end
@@ -53,10 +52,14 @@ module BitPayRails
     end
 
     def get_pem
-      key = ActiveSupport::KeyGenerator.new("IGuessI'llFigureThisOutLater").generate_key("getitworking")
-      crypt = ActiveSupport::MessageEncryptor.new(key)
+      key, crypt = key_and_crypt
       pem = crypt.decrypt_and_verify(self.pem)
       pem
+    end
+    def key_and_crypt
+      key = ActiveSupport::KeyGenerator.new(ENV['BPSECRET']).generate_key(ENV['BPSALT'])
+      crypt = ActiveSupport::MessageEncryptor.new(key)
+      return key, crypt
     end
   end
 end
