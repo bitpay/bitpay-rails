@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *.rbc
 capybara-*.html
 .rspec
@@ -33,3 +34,16 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+.bundle/
+
+# Ignore temp/test files
+log/*.log
+pkg/
+test/dummy/db/*.sqlite3
+test/dummy/db/*.sqlite3-journal
+test/dummy/log/*.log
+test/dummy/tmp/
+test/dummy/.sass-cache
+
+# Ignore compiled gems
+*.gem
