@@ -1,5 +1,5 @@
 # BitPay Rails Connector
-[![](https://secure.travis-ci.org/bitpay/ruby-client.png)](http://travis-ci.org/bitpay/ruby-client) [![Gem Version](https://badge.fury.io/rb/bitpay-sdk.svg)](http://badge.fury.io/rb/bitpay-sdk)
+[![](https://travis-ci.org/bitpay/bitpay-rails.svg?branch=master)](http://travis-ci.org/bitpay/bitpay-rails) [![Gem Version](https://badge.fury.io/rb/bitpay-rails.svg)](http://badge.fury.io/rb/bitpay-rails)
 
 Powerful, flexible, lightweight interface to the BitPay Bitcoin Payment Gateway API.
 
