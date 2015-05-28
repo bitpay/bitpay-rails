@@ -4,6 +4,7 @@
 [![Travis](https://img.shields.io/travis/bitpay/bitpay-rails.svg?style=flat-square)](https://travis-ci.org/bitpay/bitpay-rails)
 [![Gem](https://img.shields.io/gem/v/bitpay-rails.svg?style=flat-square)](https://rubygems.org/gems/bitpay-rails)
 [![Code Climate](https://img.shields.io/codeclimate/github/bitpay/bitpay-rails.svg?style=flat-square)](https://codeclimate.com/github/bitpay/bitpay-rails)
+[![Coveralls](https://img.shields.io/coveralls/bitpay/bitpay-rails.svg?style=flat-square)](https://coveralls.io/r/bitpay/bitpay-rails)
 
 Powerful, flexible, lightweight interface to the BitPay Bitcoin Payment Gateway API.
 

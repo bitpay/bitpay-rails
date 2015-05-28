@@ -30,13 +30,11 @@ class BitPayClient < ActiveRecord::Base
   end
 
   def get_refund(params = {})
-    invoice_id, request_id = params[:invoice_id], params[:request_id]
-    tell_client(:get_refund, invoice_id: invoice_id, request_id: request_id)
+    get_or_cancel_refund(:get_refund, params)
   end
 
   def cancel_refund(params = {})
-    invoice_id, request_id = params[:invoice_id], params[:request_id]
-    tell_client(:cancel_refund, invoice_id: invoice_id, request_id: request_id)
+    get_or_cancel_refund(:cancel_refund, params)
   end
 
   def get_tokens
@@ -44,6 +42,11 @@ class BitPayClient < ActiveRecord::Base
   end
 
   private
+
+  def get_or_cancel_refund(get_or_cancel, params = {})
+    invoice_id, request_id = params[:invoice_id], params[:request_id]
+    tell_client(get_or_cancel, invoice_id: invoice_id, request_id: request_id)
+  end
 
   def make_pem
     key, crypt = key_and_crypt
