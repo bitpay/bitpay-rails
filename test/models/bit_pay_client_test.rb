@@ -10,7 +10,7 @@ class BitPayClientTest < ActiveSupport::TestCase
     @client.save!
     @pem = @client.send(:get_pem)
     @mock_client = double("BitPay::SDK::Client") 
-    allow(BitPay::SDK::Client).to receive(:new).with(api_uri: "https://this.is", pem: @pem).and_return(@mock_client)
+    allow(BitPay::SDK::Client).to receive(:new).with(api_uri: "https://this.is", pem: @pem, insecure: true).and_return(@mock_client)
   end
 
   def teardown

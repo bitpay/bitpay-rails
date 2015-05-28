@@ -58,7 +58,9 @@ class BitPayClient < ActiveRecord::Base
   end
 
   def new_client
-    BitPay::SDK::Client.new(api_uri: self.api_uri, pem: get_pem)
+    params = {api_uri: self.api_uri, pem: get_pem}
+    params[:insecure] = true if (Rails.env == "development" || Rails.env == "test")
+    BitPay::SDK::Client.new(params)
   end
 
   def get_pem
