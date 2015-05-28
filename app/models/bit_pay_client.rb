@@ -39,6 +39,10 @@ class BitPayClient < ActiveRecord::Base
     tell_client(:cancel_refund, invoice_id: invoice_id, request_id: request_id)
   end
 
+  def get_tokens
+    tell_client(:get, path: "tokens")['data']
+  end
+
   private
 
   def make_pem

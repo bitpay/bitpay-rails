@@ -63,6 +63,11 @@ class BitPayClientTest < ActiveSupport::TestCase
     params = {invoice_id: 'invoiceid', request_id: 'refundid', ignored: 'ignoreme'}
     @client.cancel_refund(params)
   end
+
+  test 'client calls bitpay client to get tokens' do
+    allow(@mock_client).to receive(:get).with(path: 'tokens').and_return({"data"=>[{"merchant"=>"CYBkxSyJjRVzyAJbi9uhrPiGvx7buiZzydJhSfGnKf2u"}]})
+    assert_equal(@client.get_tokens, [{"merchant"=>"CYBkxSyJjRVzyAJbi9uhrPiGvx7buiZzydJhSfGnKf2u"}])
+  end
 end
 
 class ClientLogTest < ActiveSupport::TestCase
